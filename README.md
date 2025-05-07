@@ -5,6 +5,13 @@ Designed as part of the DBL Embedded Systems course, it integrates Arduino compo
 
 ---
 
+##  Demo Video
+
+Watch the simulation of the robot in action:  
+[ Click here to view the simulation video on Google Drive](https://drive.google.com/file/d/1EWab4e5vrFPOLzRVkKQmS0l3TuA6CFak/view?usp=sharing)
+
+---
+
 ## Features
 
 - **Decimal-to-Binary Conversion** using:
