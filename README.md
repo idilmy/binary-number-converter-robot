@@ -1,23 +1,22 @@
 # Binary Number Converter Robot
 
-This project implements a hardware and simulation system that converts decimal numbers to 4-bit binary using mechanical disks and LED indicators.  
-Designed as part of the DBL Embedded Systems course, it integrates Arduino components and Unity simulation to demonstrate embedded control logic, signal processing, and visualization.
-
+This project implements a hardware and simulation system that converts decimal numbers to 4-bit binary using mechanical disks.
+Designed as part of the DBL Embedded Systems course, it integrates Arduino components and Unity simulation to demonstrate embedded control logic, error handling, and binary output using physical disks.
 ---
 
 ## Features
 
 - **Decimal-to-Binary Conversion** using:
-  - Color sensors to detect disk positions
-  - LEDs to display binary output
+  - Color sensors to detect disk color (white = 0, black = 1)
+  - Rotating arm to push disks into a transparent output tube
 - **Mechanical Disk-Based Logic**
-  - Disks represent binary states using colored segments
+  - Physical disks represent binary bits 
+  - Solenoid and motors move disks through the robot
 - **Simulation in Unity**
   - Mimics robot behavior in a virtual environment
-  - Tests disk rotation, sensor accuracy, and signal interpretation
 - **Arduino Integration**
-  - Reads sensor data and drives LED outputs
-  - Serial communication for testing and calibration
+  - Controls sensors, motors, and solenoids
+  - Detects errors and provides feedback through an LED
 
 ---
 
@@ -26,7 +25,7 @@ Designed as part of the DBL Embedded Systems course, it integrates Arduino compo
 - Arduino (C/C++)
 - Unity (C#)
 - RGB Color Sensors
-- LEDs & Servos
+- Solenoids, Motors, Servo Motors, LEDs
 - 3D Models (.fbx assets)
 
 ---
@@ -61,7 +60,7 @@ git clone https://github.com/idilmy/binary-number-converter-robot.git
 
 ## Credits
 
-Developed by group 13 
+Developed by group 43 
 Individual contribution and repository maintained by Idil Mısra Yılmaz
 Course: DBL Embedded Systems  
 Technische Universiteit Eindhoven
