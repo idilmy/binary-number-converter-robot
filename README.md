@@ -2,6 +2,7 @@
 
 This project implements a hardware and simulation system that converts decimal numbers to 4-bit binary using mechanical disks.
 Designed as part of the DBL Embedded Systems course, it integrates Arduino components and Unity simulation to demonstrate embedded control logic, error handling, and binary output using physical disks.
+
 ---
 
 ## Features
