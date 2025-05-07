@@ -1,0 +1,75 @@
+// Variables for decimal conversion
+int decimalNumber; //to store user input 
+int i = 0; //pointer for looping 
+int binaryNumber[4]; //binary number holder 
+
+//ADD THE PRINT STATEMENT TO loop()
+void loop() {
+  Serial.println("Please input a decimal number to convert to binary:");
+  takeInput();
+  decimalToBinary();
+  ... 
+    for (int k = 0; k <= sizeof(binaryNumber) / sizeof(int); k++) {
+    ldr2_value = analogRead(ldr2);
+    if ((binaryNumber[k] == 1) && (detectBlackDisc() == true) && (ldr2_value > 300)) {
+      selectDisk();
+    } else if ((binaryNumber[k] == 0) && (detectWhiteDisc() == true) && (ldr2_value > 300)) {
+      selectDisk();
+    } else if ((detectRandomColor() == true) && (ldr2_value > 300)) {
+      Serial.println("Disk is not a recognized color");
+      k--;
+    } else {
+      k--; 
+    }
+  }
+  }
+
+//Waits for user input 
+void Hold() {
+  while (Serial.available() == 0) {}
+}
+
+//Takes user input 
+void takeInput() {
+  Hold(); 
+  decimalNumber = Serial.parseInt();
+  if (decimalNumber == 0 && Serial.readString() != "0") {
+    Serial.println("Please input an integer in the range 0-15:");
+    takeInput();
+  } else if (decimalNumber < 0 ||  decimalNumber > 15) {
+    Serial.println("This was outside of the allowed range");
+    takeInput(); 
+  }
+}
+
+//Add this under the detectBlack and detextWhite
+bool detectRandomColor() {
+  // Read Red value
+  redPW = getRedPW();
+  // Map to value from 0-255
+  redValue = map(redPW, redMin,redMax,255,0);
+  // Delay to stabilize sensor
+  delay(200);
+  
+  // Read Green value
+  greenPW = getGreenPW();
+  // Map to value from 0-255
+  greenValue = map(greenPW, greenMin,greenMax,255,0);
+  // Delay to stabilize sensor
+  delay(200);
+  
+  // Read Blue value
+  bluePW = getBluePW();
+  // Map to value from 0-255
+  blueValue = map(bluePW, blueMin,blueMax,255,0);
+  // Delay to stabilize sensor
+  delay(200);
+  
+  int summed = (blueValue + greenValue + redValue);
+  if (summed > 150 && summed < 700) {
+    return true;
+  } else {
+    return false;
+  }
+
+}
